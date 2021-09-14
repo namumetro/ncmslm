@@ -4,9 +4,9 @@ html, body {
 }
 
 text{
-  font-family: 'Hammersmith One', sans-serif;
+  /*font-family: 'Hammersmith One', sans-serif;*/
   fill: #000000;
-  font-size: 14px;
+  font-size: 1px;
   cursor: pointer;
   font-weight: normal;
 }
