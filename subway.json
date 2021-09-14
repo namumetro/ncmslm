@@ -1,10 +1,10 @@
 {
   "stations": {
     "singadeun": {
-      "label": "신가든"
+      "label": "Singadeun"
     },
     "soco": {
-      "label": "소코"
+      "label": "Soco"
     }
   },
   "lines": [
