@@ -1,71 +1,32 @@
 <!DOCTYPE html>
-﻿<html lang="ko">
-<head>
+<html lang="ko">
+  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>나무시티 광역전철 노선도</title>
-    <script src="https://code.jquery.com/jquery-1.9.0.min.js"></script>
-    <script src="jquery.subwayMap-0.5.3.js"></script>
-    <style>
-    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
-    body
-    {
-        font-family: 'Noto Sans KR', sans-serif;
-        font-size: 8pt;
-    }
-
-    /* The main DIV for the map */
-    .subway-map
-    {
-        margin: 0;
-        width: 500px;
-        height:410px;
-        background-color: white;
-    }
-
-    /* Text labels */
-    .text
-    {
-        text-decoration: none;
-        color: black;
-    }
-
-    #legend
-    {
-        float: left;
-        width: 250px;
-        height:400px;
-    }
-
-    #legend div
-    {
-        height: 25px;
-    }
-
-    #legend span
-    {
-        margin: 5px 5px 5px 0;
-    }
-    .subway-map span
-    {
-        margin: 5px 5px 5px 0;
-    }
- 
-    </style>
-</head>
-<body>
-    <div class="subway-map" data-columns="100" data-rows="100" data-cellSize="40" data-legendId="legend" data-textClass="text" data-gridNumbers="true" data-grid="true" data-lineWidth="8">
-        <ul data-color="#91d449" data-label="1호선">          
-            <li data-coords="23,6" data-maker="interchange">신가든</li>
-        </ul>
-
-    </div>
-    <div id="legend"></div>
-    
-
-    <script type="text/javascript">
-        $(".subway-map").subwayMap({ debug: true });
-    </script>
-</body>
+  </head>
+  <body>
+    <div id="linemap"></div>
+    <script src="https://d3js.org/d3.v6.js"></script>
+    <!-- <script src="../dist/d3-tube-map.js"></script> -->
+    <script>
+      var container = d3.select('#linemap');
+      var width = 1600;
+      var height = 1024;
+      var map = d3
+        .tubeMap()
+        .width(width)
+        .height(height)
+        .margin({
+          top: height / 50,
+          right: width / 7,
+          bottom: height / 10,
+          left: width / 7,
+        });
+      d3.json('./pubs.json').then(function (data) {
+        container.datum(data).call(map);
+      });
+    </script> 
+  </body>
 </html>
