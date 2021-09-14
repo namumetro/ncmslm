@@ -13,17 +13,28 @@
     <script>
       var container = d3.select('#linemap');
       var width = 1600;
-      var height = 1024;
-      var map = d3
-        .tubeMap()
-        .width(width)
-        .height(height)
-        .margin({
-          top: height / 50,
-          right: width / 7,
-          bottom: height / 10,
-          left: width / 7,
-        });
+
+    var height = 1000;
+
+    var map = d3.tubeMap()
+      .width(width)
+      .height(height)
+      .margin({
+
+        top: 20,
+
+        right: 20,
+
+        bottom: 40,
+
+        left: 100,
+
+      })
+      .on("click", function (name) {
+
+        console.log(name);
+
+      });
       d3.json('./subway.json').then(function (data) {
         container.datum(data).call(map);
         /* var svg = container.select('svg');
