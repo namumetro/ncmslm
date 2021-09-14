@@ -38,7 +38,10 @@
       });
       d3.json('./subway.json').then(function (data) {
         container.datum(data).call(map);
-
+        var els = document.querySelectorAll('text');
+        for (var i=0; i < els.length; i++) {
+          els[i].setAttribute("style", "");
+        }
         var svg = container.select('svg');
 
       zoom = d3
