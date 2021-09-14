@@ -38,6 +38,7 @@
       });
       d3.json('./subway.json').then(function (data) {
         container.datum(data).call(map);
+        document.querySelectorAll("text").setAttribute("font-size","14px");
         var svg = container.select('svg');
 
       zoom = d3
