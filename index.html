@@ -26,7 +26,7 @@
         });
       d3.json('./subway.json').then(function (data) {
         container.datum(data).call(map);
-        var svg = container.select('svg');
+        /* var svg = container.select('svg');
 
       zoom = d3
 
@@ -50,7 +50,7 @@
 
         svg.select('g').attr('transform', d3.event.transform.toString());
 
-      }
+      } */
       });
   </script> 
   </body>
