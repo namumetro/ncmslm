@@ -1,0 +1,29 @@
+{
+  "stations": {
+    "신가든": {
+      "label": "신가든"
+    },
+    "소코": {
+      "label": "소코"
+    }
+  },
+  "lines": [
+    {
+      "name": "1호선",
+      "color": "#91d449",
+      "shiftCoords": [0, 0],
+      "nodes": [
+        {
+          "coords": [0, 0],
+          "name": "신가든",
+          "labelPos": "E"
+        },
+        {
+          "coords": [1, -1],
+          "name": "소코",
+          "labelPos": "NE"
+        }
+      ]
+    }
+  ]
+}
