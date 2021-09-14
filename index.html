@@ -24,7 +24,7 @@
           bottom: height / 10,
           left: width / 7,
         });
-      (async function()=>{
+      (async function(){
         await d3.json('./subway.json').then(function (data) {
           container.datum(data).call(map);
         });
