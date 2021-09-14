@@ -24,9 +24,11 @@
           bottom: height / 10,
           left: width / 7,
         });
-      d3.json('./subway.json').then(function (data) {
-        container.datum(data).call(map);
-      });
+      (async function()=>{
+        await d3.json('./subway.json').then(function (data) {
+          container.datum(data).call(map);
+        });
+      })
     </script> 
   </body>
 </html>
