@@ -31,7 +31,6 @@ var height = isMobile ?
       });
       d3.json('./subway.json').then(function (data) {
         container.datum(data).call(map);
-        document.querySelector('svg').setAttribute('style', 'width:100vw; height:33.33333vw;');
         var els = document.querySelectorAll('text');
         for (var i=0; i < els.length; i++) {
           els[i].setAttribute("style", "");
