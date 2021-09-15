@@ -13,11 +13,17 @@
     <script src="https://unpkg.com/d3-tube-map@latest/dist/d3-tube-map.js"></script>
     <script>
       var container = d3.select('#linemap');
-      var width = 160;
-
-    var height = 1000;
+      var isMobile = window.screen.width < window.screen.height ? true : false
+var width = isMobile ?
+  window.devicePixelRatio * window.screen.width :
+  screen.width;
+var height = isMobile ?
+  window.devicePixelRatio * window.screen.height :
+  screen.height;
 
     var map = d3.tubeMap()
+      .width(width)
+      .height(height)
       .on("click", function (name) {
 
         console.log(name);
